@@ -1,0 +1,29 @@
+uSize of matrix (N) is 512 by 512.
+==4298== NVPROF is profiling process 4298, command: ./matrixMul_gpu_v4.exe
+Starting Optimized GPU computation
+It took 5.347000 ms on avg.
+RUN OK.
+==4298== Profiling application: ./matrixMul_gpu_v4.exe
+==4298== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   99.77%  3.5288ms         4  882.21us  879.83us  884.31us  GPUmatmul(int, double*, double*, double*)
+                    0.23%  8.1920us         1  8.1920us  8.1920us  8.1920us  GPUmatmul_init(int, double*, double*, double*)
+      API calls:   96.25%  608.88ms         3  202.96ms  10.723us  608.84ms  cudaMallocManaged
+                    3.57%  22.598ms         4  5.6495ms  5.3501ms  6.5390ms  cudaDeviceSynchronize
+                    0.09%  550.38us         1  550.38us  550.38us  550.38us  cuDeviceTotalMem
+                    0.04%  247.81us         3  82.602us  28.907us  150.13us  cudaFree
+                    0.02%  124.34us         3  41.448us  13.364us  67.248us  cudaMemPrefetchAsync
+                    0.02%  102.25us       101  1.0120us     118ns  41.924us  cuDeviceGetAttribute
+                    0.01%  52.335us         5  10.467us  4.9860us  27.258us  cudaLaunchKernel
+                    0.00%  18.265us         1  18.265us  18.265us  18.265us  cuDeviceGetName
+                    0.00%  5.4310us         1  5.4310us  5.4310us  5.4310us  cudaGetDevice
+                    0.00%  2.1180us         1  2.1180us  2.1180us  2.1180us  cuDeviceGetPCIBusId
+                    0.00%     976ns         3     325ns     166ns     619ns  cuDeviceGetCount
+                    0.00%     508ns         2     254ns     155ns     353ns  cuDeviceGet
+                    0.00%     245ns         1     245ns     245ns     245ns  cuDeviceGetUuid
+
+==4298== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  170.0160us  Device To Host
+Total CPU Page faults: 6

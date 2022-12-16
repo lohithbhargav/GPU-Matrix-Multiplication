@@ -1,0 +1,28 @@
+Size of matrix (N) is 512 by 512.
+==4276== NVPROF is profiling process 4276, command: ./matrixMul_gpu_v2.exe
+Starting Optimized GPU computation
+It took 7.279333 ms on avg.
+RUN OK.
+==4276== Profiling application: ./matrixMul_gpu_v2.exe
+==4276== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  10.425ms         4  2.1063ms  998.33us  4.0257ms  GPUmatmul(int, double*, double*, double*)
+      API calls:   96.56%  611.27ms         3  203.76ms  39.560us  611.17ms  cudaMallocManaged
+                    3.25%  20.547ms         4  5.1368ms  4.7344ms  5.2732ms  cudaDeviceSynchronize
+                    0.09%  562.44us         1  562.44us  562.44us  562.44us  cuDeviceTotalMem
+                    0.08%  499.33us         3  166.44us  144.19us  200.91us  cudaFree
+                    0.02%  102.40us       101  1.0130us     122ns  41.394us  cuDeviceGetAttribute
+                    0.01%  54.618us         4  13.654us  5.2710us  36.037us  cudaLaunchKernel
+                    0.00%  18.796us         1  18.796us  18.796us  18.796us  cuDeviceGetName
+                    0.00%  1.9380us         1  1.9380us  1.9380us  1.9380us  cuDeviceGetPCIBusId
+                    0.00%     888ns         3     296ns     171ns     497ns  cuDeviceGetCount
+                    0.00%     542ns         2     271ns     159ns     383ns  cuDeviceGet
+                    0.00%     258ns         1     258ns     258ns     258ns  cuDeviceGetUuid
+
+==4276== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     118  35.254KB  4.0000KB  768.00KB  4.062500MB  607.1680us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  169.2480us  Device To Host
+       5         -         -         -           -  1.223488ms  Gpu page fault groups
+Total CPU Page faults: 24

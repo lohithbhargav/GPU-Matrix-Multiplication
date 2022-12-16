@@ -1,0 +1,4 @@
+Size of matrix (N) is 512 by 512.
+Starting CPU computation
+It took 1214.386333 ms on avg.
+RUN OK.
